@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-const db = require('./index.js');
+// const db = require('./index.js');
+
 mongoose.Promise = global.Promise;
 
 const stockDataSchema = new mongoose.Schema({
@@ -7,12 +8,11 @@ const stockDataSchema = new mongoose.Schema({
   rating: Number,
   ratingBlurb: String,
   price: Number,
-  priceChange: Number
-}, 
-  {
-    timestamps: true
-  }
-);
+  priceChange: Number,
+},
+{
+  timestamps: true,
+});
 
 const Stocks = mongoose.model('Stocks', stockDataSchema);
 
