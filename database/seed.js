@@ -11,7 +11,7 @@ const generateRandomRating = function() {
 };
 
 const generateRandomPriceChange = function() {
-      return Math.random().toFixed(4);
+  return Math.random().toFixed(4);
 };
 
 const buyOrSell = function() {
