@@ -3,7 +3,7 @@ import React from 'react';
 function StockBox(props) {
   const stocks = props.stocks;
   const stockList = stocks.map((stock) => 
-    <div>
+    <div id='stockbox'>
       <div className='name'>{stock.name}</div>
       <div className='rating'>{stock.rating}</div>
       <div className='ratingBlurb'>{stock.ratingBlurb}</div>

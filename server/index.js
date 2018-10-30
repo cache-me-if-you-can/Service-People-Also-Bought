@@ -17,7 +17,7 @@ app.get('/api', (req, res) => {
     if (error) {
       res.status(500).send(error);
     }
-      res.status(200).send(results);
+    res.status(200).send(results);
   });
 })
 
