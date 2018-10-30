@@ -27,7 +27,7 @@ class App extends React.Component {
   }
 
   render() {
-    const name = this.state.stocks[0].name;
+    const name = this.state.name;
     const rating = this.state.stocks[0].rating;
     const ratingBlurb = this.state.stocks[0].ratingBlurb;
     const price = this.state.stocks[0].price;
