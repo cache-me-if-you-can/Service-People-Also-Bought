@@ -2,8 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const Stocks = require('../database/Stocks.js');
-// const db = require('../database/index');
+const db = require('../database/index');
+const Stocks = require('../database/Stocks.js')
 
 const app = express();
 const PORT = 3007;
@@ -17,16 +17,19 @@ app.get('/api', (req, res) => {
   //   console.log(res);
   // })
   console.log('hi')
-  Stocks.find({}, (error, results) => {
+  console.log('Stocks.find:  ',Stocks.find);
+  Stocks.find((error, results) => {
+    
     if (error) {
+      console.log('error')
       res.status(500).send(error);
-    } else {
-      console.log('ajoiwejfioawoijf');
-      res.status(200).send(results);
     }
-  })
+      console.log('ajoiwejfioawoijf');
+
+      res.status(200).send(results);
+  
+  });
 })
 
 app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
 });
