@@ -1,18 +1,13 @@
-const db = require('./index.js');
-const Stocks = require('./Stocks.js');
 const faker = require('faker');
+const Stocks = require('./Stocks.js');
+const db = require('./index.js');
 
-const generateRandomStockPrice = function() {
-  return (Math.random() * (2500.00 - 0.01) + 0.01).toFixed(2);
-};
+const generateRandomStockPrice = () => (Math.random() * (2500.00 - 0.01) + 0.01).toFixed(2);
 
-const generateRandomRating = () => {
-  (Math.random() * 99).toFixed(0);
-};
+const generateRandomRating = () => (Math.random() * 99).toFixed(0);
 
-const generateRandomPriceChange = () => {
-  Math.random().toFixed(4);
-};
+const generateRandomPriceChange = () => Math.random().toFixed(4);
+
 
 const buyOrSell = () => {
   const arr = ['buy', 'sell'];
@@ -31,7 +26,7 @@ const sampleGenerator = () => {
     stocks.push(obj);
   }
   return stocks;
-}
+};
 
 
 const insertSampleStocks = () => {
