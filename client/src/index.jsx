@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import Carousel from './components/carousel.jsx';
+import styles from '../Styles/app.css'
 
 
 class App extends React.Component {
@@ -20,8 +21,7 @@ class App extends React.Component {
   render() {
     console.log(this.state);
     return (
-      <div>
-        <div>Hello From React</div>
+      <div className={styles.app}>
         <Carousel stocks={this.state.stocks} />
       </div>
     );

@@ -1,0 +1,10 @@
+.app {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  margin: -6px;
+  box-sizing: inherit;
+  text-align: left;
+  -webkit-box-direction: normal;
+  box-sizing: inherit;
+}

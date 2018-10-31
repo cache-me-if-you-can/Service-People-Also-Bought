@@ -3,7 +3,7 @@ import StockBox from './stockBox.jsx';
 
 function Carousel(props) {
   return (
-    <div>
+    <div className="carousel">
       <StockBox stocks={props.stocks} />
     </div>
   ); 
