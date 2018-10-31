@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import Carousel from './components/carousel.jsx'
+import Carousel from './components/carousel.jsx';
 
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       stocks: [],
@@ -13,18 +13,18 @@ class App extends React.Component {
   }
   componentDidMount() {
     fetch('/api')
-    .then(response => response.json())
-    .then(data => this.setState({stocks: data}));
+      .then(response => response.json())
+      .then(data => this.setState({stocks: data}));
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state);
     return (
       <div>
         <div>Hello From React</div>
         <Carousel stocks={this.state.stocks} />
       </div>
-    )
+    );
   }
 
 }
