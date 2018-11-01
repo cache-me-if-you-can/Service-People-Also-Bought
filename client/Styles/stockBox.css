@@ -17,7 +17,7 @@ body {
   transition: border-color 250ms, box-shadow 250ms, -webkit-box-shadow 250ms;
   cursor: pointer;
   border-color: #0e0d0d;
-  
+  float: left;
   border-radius: 2px;
   text-align: left;
   font-size: 13px;
@@ -46,4 +46,7 @@ body {
   font-size: 13px;
   box-sizing: inherit;
   
+}
+.rating {
+  margin-left: 6px;
 }

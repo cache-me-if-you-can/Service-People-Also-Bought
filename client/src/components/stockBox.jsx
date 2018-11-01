@@ -5,9 +5,10 @@ function StockBox(props) {
   const stocks = props.stocks;
   const stockList = stocks.map((stock) => 
     <div className={styles.stockBox}>
-      <div>
+      <div className={styles.wrapper}>
         <p className={styles.name}>{stock.name}</p>
-        <div className="rating">{stock.rating}</div>
+        <i className="fa fa-tag fa-rotate-90 fa-xs" ></i>
+        <span className={styles.rating}>{stock.rating}%</span>
         <div className="ratingBlurb">{stock.ratingBlurb}</div>
       </div>
       <div className="price">{stock.price}</div>
