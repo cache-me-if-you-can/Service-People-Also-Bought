@@ -4,8 +4,12 @@ import styles from '../../Styles/carousel.css'
 
 function Carousel(props) {
   return (
-    <div className={styles.carousel}>
-      <StockBox stocks={props.stocks} />
+    <div className={styles.col1}>
+      <div className={styles.wrapper}>
+        <div className={styles.carousel}>
+          <StockBox stocks={props.stocks} />
+        </div>
+      </div>
     </div>
   ); 
 }

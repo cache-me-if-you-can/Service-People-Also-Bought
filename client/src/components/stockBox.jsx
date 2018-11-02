@@ -1,18 +1,23 @@
 import React from "react";
 import styles from '../../Styles/stockBox.css'
+import $ from 'jquery';
 
 function StockBox(props) {
   const stocks = props.stocks;
   const stockList = stocks.map((stock) => 
-    <div className={styles.stockBox}>
+    <div className={styles.stockBox} >
       <div className={styles.wrapper}>
         <p className={styles.name}>{stock.name}</p>
-        <i className="fa fa-tag fa-rotate-90 fa-xs" ></i>
-        <span className={styles.rating}>{stock.rating}%</span>
-        <div className="ratingBlurb">{stock.ratingBlurb}</div>
+        <div className={styles.ratingHover}>
+          <i className="fa fa-tag fa-rotate-90 fa-lg" ></i>
+          <span className={styles.rating}>{stock.rating}%</span>
+          <p className={styles.ratingBlurb}>{stock.ratingBlurb}.</p>  
       </div>
-      <div className="price">{stock.price}</div>
-      <div className="priceChange">{stock.priceChange}</div>
+    </div>
+      <div className={styles.priceWrapper}>
+        <div className={styles.price}>${stock.price}</div>
+        <div className={styles.priceChange}>{stock.priceChange}%</div>
+      </div>
     </div>
   )
   return (
@@ -23,3 +28,4 @@ function StockBox(props) {
 }
 
 export default StockBox;
+//<div className="ratingBlurb">{stock.ratingBlurb}</div>

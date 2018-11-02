@@ -1,6 +1,17 @@
+
+
 body {
   font-family: "DIN Pro", -apple-system, BlinkMacSystemFont, sans-serif;
 }
+.stockBox:hover {
+  background-color: #fafafa;
+}
+
+.wrapper {
+  width: 2058;
+  transform: translateX(0%);
+}
+
 .stockBox {
   height: 138px;
   width: 112.5px;
@@ -13,10 +24,8 @@ body {
   flex-direction: column;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  overflow: hidden;
-  transition: border-color 250ms, box-shadow 250ms, -webkit-box-shadow 250ms;
   cursor: pointer;
-  border-color: #0e0d0d;
+  border-color: #f4f4f5;
   float: left;
   border-radius: 2px;
   text-align: left;
@@ -24,8 +33,6 @@ body {
   font-weight: 400;
   letter-spacing: 0.25px;
   line-height: 19px;
-  box-sizing: inherit;
-  text-decoration: inherit;
 }
 
 .name {
@@ -45,8 +52,48 @@ body {
   line-height: 19px;
   font-size: 13px;
   box-sizing: inherit;
-  
+  margin-bottom: 5px;
 }
 .rating {
   margin-left: 6px;
+  font-weight: 400;
+  letter-spacing: .25px;
+}
+
+.ratingBlurb {
+  visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    opacity: 50%;
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    font-size: 10px;
+    line-height: 15px;
+  /* transition effect. not necessary */
+  
+}
+.ratingHover:hover .ratingBlurb {
+  visibility: visible;
+}
+
+.priceWrapper {
+  
+}
+
+.price {
+  color: #21ce99;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: -0.14px;
+  line-height: 30px;
+  margin: 0 0 4px;
+}
+
+.priceChange {
+  color: #21ce99;
 }
