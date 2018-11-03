@@ -1,0 +1,11 @@
+.leftButton {
+  width: 30px;
+  position: absolute;
+  top: 200px;
+  left: 270px;
+  visibility: hidden;
+}
+
+.leftButton:hover {
+  color: #21ce99;
+}

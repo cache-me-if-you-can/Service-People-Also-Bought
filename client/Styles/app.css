@@ -1,4 +1,13 @@
 .app {
   display: block;
-  
+}
+
+.title {
+  font-size: 26px;
+  line-height: 19px;
+  font-weight: 400;
+  letter-spacing: 0.25px;
+  position: absolute;
+  left: 310px;
+  top: 60px;
 }

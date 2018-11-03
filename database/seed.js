@@ -2,11 +2,11 @@ const faker = require('faker');
 const Stocks = require('./Stocks.js');
 const db = require('./index.js');
 
-const generateRandomStockPrice = () => (Math.random() * (2500.00 - 0.01) + 0.01).toFixed(2);
+const generateRandomStockPrice = () => (Math.random() * 999).toFixed(2);
 
 const generateRandomRating = () => (Math.random() * 99).toFixed(0);
 
-const generateRandomPriceChange = () => Math.random().toFixed(4);
+const generateRandomPriceChange = () => (Math.random() * 8).toFixed(2);
 
 
 const buyOrSell = () => {
@@ -20,7 +20,7 @@ const sampleGenerator = () => {
     const obj = {};
     obj.name = faker.company.companyName();
     obj.rating = generateRandomRating();
-    obj.ratingBlurb = obj.rating + '% of analyts agree this stock is a ' + buyOrSell();
+    obj.ratingBlurb = obj.rating + '% of analysts agree this stock is a ' + buyOrSell();
     obj.price = generateRandomStockPrice();
     obj.priceChange = generateRandomPriceChange();
     stocks.push(obj);
