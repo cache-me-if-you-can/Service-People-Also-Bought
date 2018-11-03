@@ -5,7 +5,7 @@ import $ from 'jquery';
 function StockBox(props) {
   const stocks = props.stocks;
   const stockList = stocks.map((stock) => 
-    <div className={styles.stockBox} >
+    <div className={styles.stockBox} key={stock._id}>
       <div className={styles.wrapper}>
         <p className={styles.name}>{stock.name}</p>
         <div className={styles.ratingHover}>

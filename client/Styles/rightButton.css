@@ -1,0 +1,10 @@
+.rightButton {
+  width: 30px;
+  position: absolute;
+  top: 200px;
+  left: 1000px;
+}
+
+.rightButton:hover {
+  color: #21ce99;
+}
