@@ -1,6 +1,6 @@
-import React from "react";
-import styles from '../../Styles/stockBox.css'
-import $ from 'jquery';
+import React from 'react';
+import styles from '../../Styles/stockBox.css';
+
 
 function StockBox(props) {
   const stocks = props.stocks;
@@ -15,7 +15,7 @@ function StockBox(props) {
       </div>
     </div>
       <div className={styles.priceWrapper}>
-        <div className={styles.price}>${stock.price}</div>
+        <div className={styles.price}>${stock.price.toFixed(2)}</div>
         <div className={styles.priceChange}>{stock.priceChange}%</div>
       </div>
     </div>
@@ -28,4 +28,3 @@ function StockBox(props) {
 }
 
 export default StockBox;
-//<div className="ratingBlurb">{stock.ratingBlurb}</div>

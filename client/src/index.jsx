@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import $ from 'jquery';
 import Carousel from './components/carousel.jsx';
 import styles from '../Styles/app.css';
 
@@ -50,9 +49,9 @@ class App extends React.Component {
       <div className={styles.app}>
         <h2 className={styles.title}>People Also Bought</h2>
         <Carousel stocks={this.state.stocks} 
-        moveLeft={this.onLeftButtonClick.bind(this)} 
-        moveRight={this.onRightButtonClick.bind(this)} 
-        count={this.state.count}
+          moveLeft={this.onLeftButtonClick.bind(this)} 
+          moveRight={this.onRightButtonClick.bind(this)} 
+          count={this.state.count}
         />
       </div>
     );
