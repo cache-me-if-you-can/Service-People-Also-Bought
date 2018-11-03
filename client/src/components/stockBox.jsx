@@ -20,6 +20,7 @@ function StockBox(props) {
       </div>
     </div>
   )
+  console.log(props, 'yooo');
   return (
     <div>
       {stockList}
