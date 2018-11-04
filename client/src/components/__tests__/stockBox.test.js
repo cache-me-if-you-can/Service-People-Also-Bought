@@ -10,13 +10,18 @@ describe('StockBox', () => {
       ratingBlurb: 'Ehh, I guess I\'d buy it',
       price: '3.50',
       priceChange: '3.5',
+    },
+    {
+      name: 'Big ol Compn\'y',
+      rating: 'Pretty Pretty Pretty Good',
+      ratingBlurb: 'Ehh, I guess I\'d buy it',
+      price: '3.50',
+      priceChange: '3.5',
     }],
   };
 
   it('Renders', () => {
     const wrapper = shallow(<StockBox state={state} />);
-    console.log(wrapper);
-    
     expect(wrapper.exists()).toBe(true);
   });
 
