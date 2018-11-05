@@ -18,7 +18,7 @@ app.get('/api/alsoBought/:id', (req, res) => {
     }
     res.status(200).send(results);
   });
-})
+});
 
 app.listen(PORT, () => {
 });
