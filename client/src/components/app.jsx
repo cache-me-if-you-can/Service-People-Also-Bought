@@ -13,8 +13,8 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    fetch('/api')
+  componentDidMount(id = '1') {
+    fetch(`/api/alsoBought/${id}`)
       .then(response => response.json())
       .then(data => this.setState({stocks: data}));
   }

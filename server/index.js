@@ -11,8 +11,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
-app.get('/api', (req, res) => {
-  Stocks.findRandom().limit(12).exec((error, results) => {
+app.get('/api/alsoBought/:id', (req, res) => {
+  Stocks.findRandom().limit(12).exec({ id: req.params.id }, (error, results) => {
     if (error) {
       res.status(500).send(error);
     }

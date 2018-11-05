@@ -16,8 +16,9 @@ const buyOrSell = () => {
 
 const sampleGenerator = () => {
   const stocks = [];
-  for (let i = 0; i < 100; i++) {
+  for (let i = 1; i <= 100; i++) {
     const obj = {};
+    obj.id = i;
     obj.name = faker.company.companyName();
     obj.rating = generateRandomRating();
     obj.ratingBlurb = obj.rating + '% of analysts agree this stock is a ' + buyOrSell();

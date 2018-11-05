@@ -5,6 +5,7 @@ const db = require('./index.js');
 mongoose.Promise = global.Promise;
 
 const stockDataSchema = new mongoose.Schema({
+  id: Number,
   name: String,
   rating: Number,
   ratingBlurb: String,
