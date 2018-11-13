@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoUri = 'mongodb://127.0.0.1/robinhoodfec';
+const mongoUri = 'mongodb://Ben:Benm1024@ds157223.mlab.com:57223/robinhoodfec';
 const db = mongoose.connect(mongoUri);
 
 module.exports = db;

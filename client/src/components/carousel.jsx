@@ -8,17 +8,20 @@ function Carousel(props) {
 
   return (
     <div className={styles.col1}> 
+    <LeftButton moveLeft={props.moveLeft} />
       <div className={styles.col2}>
-      <RightButton moveRight={props.moveRight} />
-      <LeftButton moveLeft={props.moveLeft} />
+        <h2 className={styles.title}>People Also Bought</h2>
+        
         <div className={styles.wrapper}>
           <div className={styles.carousel}>
             <StockBox stocks={props.stocks} />
           </div>
         </div>
+        
       </div>
+      <RightButton moveRight={props.moveRight} />
     </div>
-  ); 
+  );
 }
 
 export default Carousel;

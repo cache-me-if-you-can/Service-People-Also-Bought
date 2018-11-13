@@ -5,7 +5,7 @@ const path = require('path');
 const Stocks = require('../database/Stocks.js');
 
 const app = express();
-const PORT = 3007;
+const PORT = 3006;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
