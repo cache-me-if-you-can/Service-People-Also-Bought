@@ -1,8 +1,10 @@
 body {
   font-family: "DIN Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: white;
+  background-color: #1b1b1c;
 }
 .stockBox:hover {
-  background-color: #fafafa;
+  background-color: #171718;
 }
 
 .wrapper {
@@ -23,7 +25,7 @@ body {
   -webkit-box-pack: justify;
   justify-content: space-between;
   cursor: pointer;
-  border-color: #f4f4f5;
+  border-color: #0d0d0d;
   float: left;
   border-radius: 2px;
   text-align: left;
@@ -44,7 +46,7 @@ body {
   margin: 0;
   max-height: 6ex;
   overflow: hidden;
-  color: #171718;
+  color: #ffffff;
   cursor: pointer;
   text-align: left;
   line-height: 19px;
@@ -56,6 +58,7 @@ body {
   margin-left: 6px;
   font-weight: 400;
   letter-spacing: .25px;
+  color: white;
 }
 
 .ratingBlurb {

@@ -1,8 +1,10 @@
 .rightButton {
   width: 30px;
-  position: absolute;
-  top: 200px;
-  left: 1000px;
+  position: relative;
+  float: right;
+  top: -151px;
+  left: 15px;
+  color: white;
 }
 
 .rightButton:hover {
