@@ -44,8 +44,10 @@ class App extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className={styles.app}>
+        <h2 className={styles.title}>People Also Bought</h2>
         <Carousel stocks={this.state.stocks} 
           moveLeft={this.onLeftButtonClick.bind(this)} 
           moveRight={this.onRightButtonClick.bind(this)} 
