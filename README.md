@@ -12,6 +12,7 @@
 ## Table of Contents
 
 1. [Usage](#Usage)
+1. [Routes](#Routes)
 1. [Requirements](#requirements)
 1. [Development](#development)
 
@@ -19,10 +20,7 @@
 
 > Some usage instructions
 
-Update 
-
-
-## Additional Routes
+## Routes
 
 | Route/Endpoint                | Description                            | Method  |
 | ----------------------------- |---------------------------------------:| :------:|

@@ -1,11 +1,11 @@
 .col1 {
-  display: inline-block;     
-  justify-content: space-between;
-  flex-flow: row nowrap;
+  width: 100%;
+  text-align: center;
+  padding-top: 100px;
 }
 
 .col2 {
- width: 690px; 
+  width: 690px;
   padding: 20px;
   margin: 0 auto;
 }
@@ -32,18 +32,4 @@
   width: 690px;
   height: 196px;
   display: flex;
-}
-
-.title {
-  font-size: 26px;
-  line-height: 19px;
-  font-weight: bold;
-  letter-spacing: 0.25px;
-  position: relative;
-  text-align: left;
-  padding-bottom: 10px;
-  left: -10px;
-}
-.container {
-   /* switched from default (flex-start, see below) */
 }

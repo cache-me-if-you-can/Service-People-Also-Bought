@@ -1,11 +1,9 @@
 .leftButton {
   width: 30px;
-  position: relative;
-  float: left;
-  top: 158px;
-  left: -15px;
+  position: absolute;
+  top: 200px;
+  left: 270px;
   visibility: hidden;
-  color: white;
 }
 
 .leftButton:hover {

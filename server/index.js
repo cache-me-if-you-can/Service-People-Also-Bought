@@ -5,25 +5,15 @@ const path = require('path');
 const Stocks = require('../database/Stocks.js');
 
 const app = express();
-const PORT = 3006;
+const PORT = 3007;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
-//Show a list of alsoBougth
-app.get('/api/alsoBought/:id', (req, res) => {
-  Stocks.findRandom().limit(12).exec({ id: req.params.id }, (error, results) => {
-    if (error) {
-      res.status(500).send(error);
-    }
-    res.status(200).send(results);
-  });
-});
-
 // Get all stock records
 app.get('/api/alsoBought/', (req, res) => {
-  Stock.readAll((err, stocks) => {
+  Stocks.find({}, (err, stocks) => {
     if (err) {
       res.sendStatus(400);
     } else {
@@ -32,42 +22,54 @@ app.get('/api/alsoBought/', (req, res) => {
   });
 });
 
-//Show the stock record in the db for the specific id
-app.get('/api/alsoBought/:id/show', (req, res) => {
-  Stock.readOne(req.params.id, (err, stock) => {
-    if (stock) {
-      res.status(200).json(stock);
+// Get the list of alsoBought stocks
+app.get('/api/alsoBought/:id', (req, res) => {
+  Stocks.findRandom().limit(12).exec({ id: req.params.id }, (err, results) => {
+    if (err) {
+      res.status(500).send(err);
     } else {
-      res.sendStatus(404);
+      res.status(200).send(results);
     }
   });
 });
 
-//Create a new stock record
+// Show the stock record in the db for the specific id
+app.get('/api/alsoBought/:id/show', (req, res) => {
+  Stocks.find({ id: req.params.id }, (err, stock) => {
+    if (err) {
+      res.sendStatus(404);
+    } else {
+      res.status(200).json(stock);
+    }
+  });
+});
+
+// Create a new stock record
 app.post('/api/alsoBought/', (req, res) => {
-  Stock.create(req.body.stock, (err, newStock) => {
+  Stocks.create(req.body.stock, (err, newStock) => {
     if (err) {
       res.sendStatus(400);
     } else {
       res.status(201).json(newStock);
     }
   });
-});    
-
-//Update a existing stock record
-app.put('/api/alsoBought/:id', (req, res) => {
-  Stock.update(req.params.id, req.body.stock, (err, stock) => {
-    if (stock) {
-      res.status(200).json(todo);
-    } else {
-      res.sendStatus(404);
-    }
-  });
 });
 
-//Delete a record of the specific id
+// Update a existing stock record
+app.put('/api/alsoBought/:id', (req, res) => {
+  Stocks.update({ id: req.params.id }, { $set: { name: req.body.stock.name } },
+    (err, results) => {
+      if (err) {
+        res.sendStatus(404);
+      } else {
+        res.status(200).json(results);
+      }
+    });
+});
+
+// //Delete a record of the specific id
 app.delete('/api/alsoBought/:id', (req, res) => {
-  Stocks.delete(req.params.id, (err) => {
+  Stocks.remove({ id: req.params.id }, (err) => {
     if (err) {
       res.sendStatus(404);
     } else {
@@ -77,25 +79,5 @@ app.delete('/api/alsoBought/:id', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Listengin on port ... ${PORT}`);
+  console.log('Running on Port...', PORT);
 });
-
-
-// // Update Stock -- member route
-// app.patch('/api/alsoBought/:id', function(req, res) {
-//   //5bce00c26cde8d39f3159b7f
-//   Stock.findAndModify({
-//     query: {_id: req.params.id},
-//     //update: {$inc: {fieldToUpdate: newValue}},
-//     //maybe want to update prices and  rating, ratingBlur
-//     upsert: true
-//   });
-// });
-
-
-// obj.id = i;
-// obj.name = faker.company.companyName();
-// obj.rating = generateRandomRating();
-// obj.ratingBlurb = obj.rating + '% of analysts agree this stock is a ' + buyOrSell();
-// obj.price = generateRandomStockPrice();
-// obj.priceChange = generateRandomPriceChange();
