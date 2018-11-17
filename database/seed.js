@@ -1,7 +1,8 @@
 const faker = require('faker');
-const Stocks = require('./Stocks.js');
-const db = require('./index.js');
-
+const fs = require('fs');
+const csvWriter = require('csv-write-stream');
+// const db = require('./index.js');
+// const Stocks = require('./Stocks.js');
 const generateRandomStockPrice = () => (Math.random() * 999).toFixed(2);
 
 const generateRandomRating = () => (Math.random() * 99).toFixed(0);
@@ -16,23 +17,30 @@ const buyOrSell = () => {
 
 const sampleGenerator = () => {
   const stocks = [];
-  for (let i = 1; i <= 100; i++) {
+  const writer = csvWriter({ headers: ['id', 'name', 'rating', 'ratingBlurb', 'price', 'priceChange'] });
+  writer.pipe(fs.createWriteStream('out.csv'));
+  for (let i = 1; i <= 5e6; i += 1) {
     const obj = {};
     obj.id = i;
     obj.name = faker.company.companyName();
     obj.rating = generateRandomRating();
-    obj.ratingBlurb = obj.rating + '% of analysts agree this stock is a ' + buyOrSell();
+    obj.ratingBlurb = `${obj.rating} % of analysts agree this stock is a ${buyOrSell()}`;
     obj.price = generateRandomStockPrice();
     obj.priceChange = generateRandomPriceChange();
-    stocks.push(obj);
+    writer.write([obj.id, obj.name, obj.rating, obj.ratingBlurb, obj.price, obj.priceChange]);
+    if (i === 1e6 || i === 2e6 || i === 3e6 || i === 4e6 || i === 5e6
+      || i === 6e6 || i === 7e6 || i === 8e6 || i === 9e6 || i === 10e6) {
+      console.log(i);
+    }
   }
-  return stocks;
+  writer.end();
 };
 
+sampleGenerator();
 
-const insertSampleStocks = () => {
-  Stocks.create(sampleGenerator())
-    .then(() => db.disconnect());
-};
+// const insertSampleStocks = () => {
+//   Stocks.create(sampleGenerator())
+//     .then(() => db.disconnect());
+// };
 
-insertSampleStocks();
+// insertSampleStocks();
