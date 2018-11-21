@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server/index.js",
     "react-dev": "webpack -d --watch",
-    "db:setup": "node database/seed.js",
+    "seed-mongodb": "node database/mongoDB/seed.js",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "test:coverage": "jest --verbose --coverage"
@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "body-parser": "^1.17.0",
+    "client": "0.0.1",
     "css-loader": "^1.0.1",
     "csv-write-stream": "^2.0.0",
     "express": "^4.15.0",
@@ -53,6 +54,8 @@
     "mongoose": "^4.13.17",
     "mongoose-random": "^0.1.1",
     "path": "^0.12.7",
+    "pg": "^7.6.1",
+    "pg-format": "^1.0.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.81.0",

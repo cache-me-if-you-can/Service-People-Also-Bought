@@ -1,0 +1,34 @@
+const express = require('express');
+
+const app = express();
+const pg = require('pg');
+const format = require('pg-format');
+
+const PGUSER = 'emely';
+const PGDATABASE = 'emely';
+const age = 732;
+
+const config = {
+  user: PGUSER, // name of the user account
+  database: PGDATABASE, // name of the database
+  max: 10, // max number of clients in the pool
+  idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
+};
+
+const pool = new pg.Pool(config);
+let myClient;
+
+pool.connect((err, client, done) => {
+  if (err) { console.log(err); }
+  app.listen(3000, () => {
+    console.log('listening on 3000');
+  });
+  myClient = client;
+  const ageQuery = format('SELECT * from numbers WHERE age = %L', age);
+  myClient.query(ageQuery, (err, result) => {
+    if (err) {
+      console.log(err);
+    }
+    console.log(result.rows[0]);
+  });
+});
