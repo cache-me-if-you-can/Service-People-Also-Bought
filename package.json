@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/index.js",
+    "start-mongodb": "nodemon server/index.js",
+    "start": "nodemon server/server_psql.js",
     "react-dev": "webpack -d --watch",
     "seed-mongodb": "node database/mongoDB/seed.js",
+    "seed-psql": "node database/psql/seed.js",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
     "test:coverage": "jest --verbose --coverage"
@@ -41,6 +43,7 @@
     "webpack": "^2.2.1"
   },
   "dependencies": {
+    "bluebird": "^3.5.3",
     "body-parser": "^1.17.0",
     "client": "0.0.1",
     "css-loader": "^1.0.1",
@@ -50,12 +53,15 @@
     "fs": "0.0.1-security",
     "identity-obj-proxy": "^3.0.0",
     "jquery": "^3.1.1",
+    "knex": "^0.15.2",
     "moment": "^2.22.2",
     "mongoose": "^4.13.17",
     "mongoose-random": "^0.1.1",
+    "newrelic": "^4.11.0",
     "path": "^0.12.7",
     "pg": "^7.6.1",
     "pg-format": "^1.0.4",
+    "pg-promise": "^8.5.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "request": "^2.81.0",
