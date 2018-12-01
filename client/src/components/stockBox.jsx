@@ -4,28 +4,27 @@ import styles from '../../Styles/stockBox.css';
 
 function StockBox(props) {
   const stocks = props.stocks;
-  const stockList = stocks.map((stock) => 
-    <div className={styles.stockBox} key={stock._id}>
+  const stockList = stocks.map(stock => (
+    <div className={styles.stockBox} key={stock.id}>
       <div className={styles.wrapper}>
-        <p className={styles.name}>{stock.name}</p>
+        <p className={styles.name}>{stock.companyname}</p>
         <div className={styles.ratingHover}>
-          <i className="fa fa-tag fa-rotate-90 fa-lg" ></i>
+          <i className="fa fa-tag fa-rotate-90 fa-lg"  />
           <span className={styles.rating}>{stock.rating}%</span>
-          <p className={styles.ratingBlurb}>{stock.ratingBlurb}.</p>  
+          <p className={styles.ratingBlurb}>{stock.ratingblurb}.</p>  
+        </div>
       </div>
-    </div>
       <div className={styles.priceWrapper}>
-        <div className={styles.price}>${stock.price.toFixed(2)}</div>
-        <div className={styles.priceChange}>{stock.priceChange}%</div>
+        <div className={styles.price}>${stock.price}</div>
+        <div className={styles.priceChange}>{stock.pricechange}%</div>
       </div>
     </div>
-  )
-  console.log(props, 'yooo');
+  ));
   return (
     <div>
       {stockList}
     </div>
-  )
+  );
 }
 
 export default StockBox;

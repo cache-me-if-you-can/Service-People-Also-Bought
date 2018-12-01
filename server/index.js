@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const Stocks = require('../database/Stocks.js');
+const Stocks = require('../database/mongoDB/Stocks.js');
 
 const app = express();
 const PORT = 3007;

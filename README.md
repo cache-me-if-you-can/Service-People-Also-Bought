@@ -1,13 +1,13 @@
-# Project Name
+# Robinhood Item Page Clone
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/cache-me-if-you-can/price-volume-chart-service
+  - https://github.com/cache-me-if-you-can/kent-price-chart
+  - https://github.com/cache-me-if-you-can/service-people-also-bought
+  - https://github.com/cache-me-if-you-can/buy-service
 
 ## Table of Contents
 

@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const SRC_DIR = path.join(__dirname, '/client/src');
 const DIST_DIR = path.join(__dirname, '/client/dist');
@@ -9,6 +10,11 @@ module.exports = {
     filename: 'bundle.js',
     path: DIST_DIR,
   },
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'client/src/index.html' }
+    ], {}),
+  ],
   module: {
     rules: [
       {
