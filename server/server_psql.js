@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -12,18 +13,19 @@ app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 
 const PGUSER = 'emely';
-const PGDATABASE = 'robinhoodpsql';
+const PGDATABASE = 'postgres';
 
 const client = new Client({
   user: PGUSER,
-  host: 'localhost',
+  host: 'ec2-52-10-15-224.us-west-2.compute.amazonaws.com',
   database: PGDATABASE,
-  password: '',
+  password: 'HR123$',
+  port: 5432,
 });
 
 client.connect();
 
-app.get('/api/alsoBought/:id', (req, res) => {
+app.get('/api/alsobought/:id', (req, res) => {
   client.query(`SELECT * from transactions WHERE stock_id = ${req.params.id}`, (firstError, result) => {
     if (firstError) { res.status(500).send(firstError); } else {
       const users = [];
