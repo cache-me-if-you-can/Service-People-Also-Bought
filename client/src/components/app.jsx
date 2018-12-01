@@ -14,7 +14,7 @@ class App extends React.Component {
   }
 
   componentDidMount(id = '1') {
-    fetch(`/api/alsoBought/${id}`)
+    fetch(`/api/alsobought/${id}`)
       .then(response => response.json())
       .then(data => this.setState({stocks: data}));
   }
