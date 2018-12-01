@@ -26,4 +26,5 @@ build/
 dist/bundle.js
 
 config.js
+config/
 newrelickey.js
